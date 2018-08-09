@@ -1,0 +1,15 @@
+language: java
+dist: trusty
+sudo: false
+jdk:
+- oraclejdk8
+before_install:
+- chmod +x mvnw
+cache:
+  directories:
+  - $HOME/.m2
+install:
+ - ./mvnw clean package
+branches:
+  only:
+  - master
