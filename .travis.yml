@@ -1,15 +1,21 @@
 language: java
 dist: trusty
-sudo: false
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "melissapalmer-github"
+    token:
+      secure: $SONAR_TOKEN # Set in the settings page of your repository, as a secure variable
+
 jdk:
-- oraclejdk8
-before_install:
-- chmod +x mvnw
+  - oraclejdk8
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean package sonar:sonar
+
 cache:
   directories:
-  - $HOME/.m2
-install:
- - ./mvnw clean package
-branches:
-  only:
-  - master
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
