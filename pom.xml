@@ -19,6 +19,9 @@
 	</parent>
 
 	<properties>
+		<sonar.projectKey>sonarspringgithub</sonar.projectKey>
+                <sonar.host.url>http://ip172-18-0-18-c1m9mbpbqvp0009gjdn0-9000.direct.labs.play-with-docker.com</sonar.host.url>
+                <sonar.login>abcb73d83d12862a0aed69fbc1f81a193d774c65</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
